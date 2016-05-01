@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/Materialize/bin/materialize.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="lolanalyticsApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+
+    <div ng-view=""></div>
+
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/Materialize/bin/materialize.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/constants/ConfigConstants.js"></script>
+    <!-- filters -->
+    <script src="scripts/filters/DurationFilter.js"></script>
+    <!-- Custom Directives -->
+    <script src="scripts/directives/ImageFallback.js"></script>
+
+    <!-- Item -->
+    <script src="scripts/item/ItemHttp.js"></script>
+    <script src="scripts/item/ItemService.js"></script>
+    <!-- Dashboard -->
+    <script src="scripts/dashboard/DashboardController.js"></script>
+    <!-- Summoner-->
+    <script src="scripts/summoner/SummonerDirective.js"></script>
+    <!-- Game -->
+    <script src="scripts/game/list/GameListDirective.js"></script>
+    <script src="scripts/game/single/GameDirective.js"></script>
+    <script src="scripts/game/GameHttp.js"></script>
+    <script src="scripts/game/GameService.js"></script>
+    <!-- User -->
+    <script src="scripts/user/UserService.js"></script>
+    <script src="scripts/user/UserDirective.js"></script>
+    <script src="scripts/user/UserHttp.js"></script>
+    <!-- Champion -->
+    <script src="scripts/champion/ChamptionHttp.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,24 @@
+<div class="row no-margin">
+  <div class="col s4 m4 l1 left">
+    <img ng-src="{{image}}" ng-show="image !== null" alt="Champion" class="responsive-img champion-game-image"/>
+  </div>
+  <div class="col s4 m2 l2 truncate right-align">
+    <p><b>{{game.subType}}</b></p>
+    <p ng-show="game.stats.win" class="green-text"><b>WON</b></p>
+    <p ng-show="!game.stats.win" class="red-text"><b>LOST</b></p>
+  </div>
+  <div class="col s12 m2 l2 kill-death">
+    <p>
+      <span class="green-text">{{game.stats.championsKilled}}</span>/
+      <span class="red-text">{{game.stats.numDeaths}}</span>/
+      <span class="green-text lighten-3">{{game.stats.assists}}</span>
+    </p>
+  </div>
+  <div class="col s12 m7 l5">
+    <img ng-repeat="item in items track by $index" ng-src="{{item}}" class="responsive-img game-item-img" fallback-src="http://whosthatchampion.com/static/images/item/NoItem.png"/>
+  </div>
+  <div class="col l2 hide-on-med-and-down">
+    <p>{{game.stats.timePlayed | msToMinutes}}</p>
+    <p>{{game.createDate | date}}</p>
+  </div>
+</div>
