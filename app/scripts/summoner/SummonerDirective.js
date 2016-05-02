@@ -10,7 +10,7 @@ angular
         templateUrl: './scripts/summoner/SummonerView.html',
         scope: {},
         link: function (scope) {
-
+          scope.times = new Array(8);
           //for more summoner info
           //https://euw.api.pvp.net/api/lol/euw/v1.3/stats/by-summoner/19565074/summary?season=SEASON2016&api_key=ce1ae5c2-c12c-4a40-9dd0-0147d8db0db0
 
