@@ -1,5 +1,27 @@
-<p>{{error}}</p>
+<div class="login-container">
+  <h5 class="left-align">Login</h5>
+  <p>{{error}}</p>
+  <input type="text" placeholder="Username" ng-model="username"/>
+  <input type="password" placeholder="Password" ng-model="password"/>
+  <a class="waves-effect waves-light btn right" ng-click="login()">Login</a>
+</div>
 
-<input type="text" placeholder="Username" ng-model="username"/>
-<input type="text" placeholder="Password" ng-model="password"/>
-<a class="waves-effect waves-light btn right" ng-click="login()">Login</a>
+<div class="register-container">
+  <a href class="black-text" ng-click="toggleRegister()">
+    <h5 class="left-align">Register
+      <i class="material-icons" ng-show="!registerShow">keyboard_arrow_down</i>
+      <i class="material-icons" ng-show="registerShow">keyboard_arrow_up</i>
+    </h5>
+  </a>
+  <div class="divider" ng-show="!registerShow"></div>
+  <p>{{registerError}}</p>
+  <div ng-show="registerShow">
+    <input type="text" placeholder="Username" ng-model="registerUsername"/>
+    <input type="password" placeholder="Password" ng-model="registerPassword"/>
+    <input type="password" placeholder="Repeat password" ng-model="registerPasswordRep"/>
+    <input type="email" placeholder="Email" ng-model="registerEmail"/>
+    <!--<input type="text" placeholder="Summonername" ng-model="registerSummonername"/>-->
+    <a class="waves-effect waves-light btn right" ng-click="register()">Register</a>
+  </div>
+</div>
+

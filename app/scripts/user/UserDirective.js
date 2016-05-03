@@ -5,13 +5,33 @@ angular
   .directive('user', function (
     $location,
     $auth,
-    $http
+    RegisterHttp
   ) {
     return {
       restrict: 'A',
       templateUrl: './scripts/user/UserView.html',
       scope: {},
       link: function (scope) {
+        scope.registerShow = false;
+
+        scope.toggleRegister = function () {
+          scope.registerShow = !scope.registerShow;
+        };
+
+        scope.register = function () {
+          // TODO: Validate data
+
+          var data = {
+            name: scope.registerUsername,
+            password: scope.registerPassword,
+            email: scope.registerEmail
+          };
+
+          RegisterHttp.register(data)
+            .then(function (res) {
+              scope.registerError = res.data.message;
+            });
+        };
 
         scope.login = function () {
           $auth.login({
