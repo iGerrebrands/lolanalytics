@@ -3,17 +3,13 @@
 angular
   .module('lolanalyticsApp')
   .directive('summoner', function (
-    SummonerHttp
   ) {
     return {
       restrict: 'A',
       templateUrl: './scripts/summoner/SummonerView.html',
-      scope: {id: '='},
+      scope: {data: '='},
       link: function (scope) {
-        SummonerHttp.getSummonerInfo(scope.id)
-          .then(function(res) {
-            scope.summoner = res.data[scope.id];
-          });
+        scope.summoner = scope.data;
 
         scope.$watch('summoner', function (newVal) {
           scope.user = newVal;

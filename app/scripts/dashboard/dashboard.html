@@ -2,8 +2,8 @@
   <div class="nav-wrapper teal">
     <a href class="brand-logo right nav-user-name">{{user.name}}</a>
     <ul id="nav-mobile" class="left">
-      <li><a href ng-click="navigate('summoners')">Summoners</a></li>
-      <li><a href ng-click="navigate('games')">Latest Games</a></li>
+      <li><a href ng-click="navigate('summoners')" ng-mouseenter="hoverSummoner = true" ng-mouseleave="hoverSummoner = false">Summoners</a></li>
+      <li><a href ng-click="navigate('addsummoner')" ng-mouseenter="hoverSummoner = true" ng-mouseleave="hoverSummoner = false" ng-show="hoverSummoner">Add summoner</a></li>
     </ul>
   </div>
 </nav>
@@ -11,4 +11,5 @@
 <div class="container">
   <div game-list ng-show="active === 'games'"></div>
   <div summoners ng-show="active === 'summoners'"></div>
+  <div add-summoner ng-show="active === 'addsummoner'"></div>
 </div>

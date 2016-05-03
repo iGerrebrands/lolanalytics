@@ -16,10 +16,10 @@
   <div class="divider" ng-show="!registerShow"></div>
   <p>{{registerError}}</p>
   <div ng-show="registerShow">
-    <input type="text" placeholder="Username" ng-model="registerUsername"/>
-    <input type="password" placeholder="Password" ng-model="registerPassword"/>
-    <input type="password" placeholder="Repeat password" ng-model="registerPasswordRep"/>
-    <input type="email" placeholder="Email" ng-model="registerEmail"/>
+    <input type="text" placeholder="Username" ng-model="registerUsername" class="validate"/>
+    <input type="password" placeholder="Password" ng-model="registerPassword" class="validate"/>
+    <input type="password" placeholder="Repeat password" ng-model="registerPasswordRep" class="validate"/>
+    <input type="email" placeholder="Email" ng-model="registerEmail" class="validate"/>
     <!--<input type="text" placeholder="Summonername" ng-model="registerSummonername"/>-->
     <a class="waves-effect waves-light btn right" ng-click="register()">Register</a>
   </div>

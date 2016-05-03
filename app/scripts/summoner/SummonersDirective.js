@@ -14,7 +14,7 @@ angular
           scope.summonerIds = [];
           SummonerHttp.getUsersSummoners()
             .then(function (res) {
-              scope.summonerIds = res.data.summoners;
+              scope.summoners = res.data.summoners;
             });
         }
       };
