@@ -23,6 +23,7 @@ angular
     CONFIG
   ) {
     $authProvider.loginUrl = CONFIG.AUTH_URL;
+    $authProvider.authToken = '';
 
     $routeProvider
       .when('/', {
@@ -39,7 +40,8 @@ angular
   }).run(function (
     $location,
     $rootScope,
-    $auth
+    $auth,
+    $http
   ) {
 
     $rootScope.$on('$routeChangeSuccess', function (angularEvent, current) {

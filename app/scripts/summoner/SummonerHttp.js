@@ -12,4 +12,11 @@ angular
         method: 'GET'
       });
     };
+
+    this.getUsersSummoners = function () {
+      return $http({
+        url: CONFIG.API_URL + '/user/summoners',
+        method: 'GET'
+      });
+    }
   });

@@ -10,7 +10,6 @@ angular
       templateUrl: './scripts/summoner/SummonerView.html',
       scope: {id: '='},
       link: function (scope) {
-        console.log(scope.id);
         SummonerHttp.getSummonerInfo(scope.id)
           .then(function(res) {
             scope.summoner = res.data[scope.id];
@@ -18,7 +17,7 @@ angular
 
         scope.$watch('summoner', function (newVal) {
           scope.user = newVal;
-          if(newVal !== null)
+          if(newVal !== null && typeof newVal !== 'undefined')
             scope.icon = 'http://ddragon.leagueoflegends.com/cdn/6.8.1/img/profileicon/' + newVal.profileIconId + '.png'
         });
       }

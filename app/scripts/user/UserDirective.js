@@ -4,7 +4,8 @@ angular
   .module('lolanalyticsApp')
   .directive('user', function (
     $location,
-    $auth
+    $auth,
+    $http
   ) {
     return {
       restrict: 'A',
@@ -18,7 +19,6 @@ angular
             password: scope.password
           })
           .then(function (response) {
-            //console.log(response);
             $location.path('dashboard');
           })
           .catch(function (err) {
