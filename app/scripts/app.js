@@ -19,9 +19,10 @@ angular
   ])
   .config(function (
     $routeProvider,
-    $authProvider
+    $authProvider,
+    CONFIG
   ) {
-    $authProvider.loginUrl = 'http://localhost:6001/api/user/login';
+    $authProvider.loginUrl = CONFIG.AUTH_URL;
 
     $routeProvider
       .when('/', {
