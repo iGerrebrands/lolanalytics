@@ -14,9 +14,15 @@ angular
     'ngCookies',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'satellizer'
   ])
-  .config(function ($routeProvider) {
+  .config(function (
+    $routeProvider,
+    $authProvider
+  ) {
+    $authProvider.loginUrl = 'http://localhost:6001/api/user/login';
+
     $routeProvider
       .when('/', {
         templateUrl: 'scripts/main.html'
@@ -24,7 +30,7 @@ angular
       .when('/dashboard', {
         templateUrl: 'scripts/dashboard/dashboard.html',
         controller: 'DashboardController',
-        summonerRequired: true
+        loggedIn: true
       })
       .otherwise({
         redirectTo: '/'
@@ -32,10 +38,12 @@ angular
   }).run(function (
     UserService,
     $location,
-    $rootScope
+    $rootScope,
+    $auth
   ) {
+
     $rootScope.$on('$routeChangeSuccess', function (angularEvent, current) {
-        if (current.summonerRequired && UserService.getUserInfo() === null) {
+        if (current.loggedIn && !$auth.isAuthenticated()) {
           $location.path('/');
         }
     });
