@@ -37,7 +37,6 @@ angular
         redirectTo: '/'
       });
   }).run(function (
-    UserService,
     $location,
     $rootScope,
     $auth

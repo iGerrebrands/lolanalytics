@@ -1,19 +1,14 @@
-<div class="row">
-  <div class="col s12 m3" ng-repeat="summoner in summoners">
-    <div class="card">
-      <div class="card-image">
-        <img ng-src="{{icon}}"/>
-        <span class="card-title">{{user.name}}</span>
-      </div>
-      <div class="card-content">
-        <p><b>id: </b>{{user.id}}</p>
-        <p><b>Level: </b>{{user.summonerLevel}}</p>
-        <p><b>Revision Date: </b>{{user.revisionDate | date}}</p>
-      </div>
-      <div class="card-action">
-        <a href>More info</a>
-      </div>
-    </div>
+<div class="card">
+  <div class="card-image">
+    <img ng-src="{{icon}}"/>
+    <span class="card-title">{{summoner.name}}</span>
+  </div>
+  <div class="card-content">
+    <p><b>id: </b>{{summoner.id}}</p>
+    <p><b>Level: </b>{{summoner.summonerLevel}}</p>
+    <p><b>Revision Date: </b>{{summoner.revisionDate | date}}</p>
+  </div>
+  <div class="card-action">
+    <a href>More info</a>
   </div>
 </div>
-

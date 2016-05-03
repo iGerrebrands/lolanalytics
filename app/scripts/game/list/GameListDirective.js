@@ -3,8 +3,7 @@
 angular
   .module('lolanalyticsApp')
   .directive('gameList', function (
-      GameHttp,
-      UserService
+      //GameHttp,
   ) {
     return {
       restrict: 'A',
@@ -12,15 +11,15 @@ angular
       scope: {},
       link: function (scope) {
 
-        if (UserService.getUserInfo() !== null) {
-          GameHttp.getGameStatus(UserService.getUserInfo().id)
-            .then(function (res) {
-              scope.games = res.data.games;
-              console.log(scope.games[7]);
-            }, function (err) {
-              console.log(status);
-            });
-        }
+        // if (UserService.getUserInfo() !== null) {
+        //   GameHttp.getGameStatus(UserService.getUserInfo().id)
+        //     .then(function (res) {
+        //       scope.games = res.data.games;
+        //       console.log(scope.games[7]);
+        //     }, function (err) {
+        //       console.log(status);
+        //     });
+        // }
 
       }
     }
