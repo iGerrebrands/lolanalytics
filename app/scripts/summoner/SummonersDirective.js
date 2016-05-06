@@ -12,9 +12,14 @@ angular
         scope: {ids: '='},
         link: function (scope) {
           scope.summonerIds = [];
+          scope.connection = true;
           SummonerHttp.getUsersSummoners()
             .then(function (res) {
               scope.summoners = res.data.summoners;
+            }, function (err) {
+              if(err.status === -1){
+                scope.connection = false;
+              }
             });
         }
       };

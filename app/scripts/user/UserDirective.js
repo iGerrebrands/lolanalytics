@@ -19,8 +19,24 @@ angular
         };
 
         scope.register = function () {
-          // TODO: Validate data
+          if(scope.registerUsername.length < 3) {
+            scope.registerError = 'Username must be at least 3 characters';
+            return;
+          }
+          if(scope.registerPassword !== scope.registerPasswordRep) {
+            scope.registerError = 'Passwords must match';
+            return;
+          }
+          if(scope.registerPassword.length < 5){
+            scope.registerError = 'Password must be at least 5 characters';
+            return;
+          }
+          if(typeof scope.registerEmail === 'undefined'){
+            scope.registerError = 'This is not a valid email address';
+            return;
+          }
 
+          scope.registerError = '';
           var data = {
             name: scope.registerUsername,
             password: scope.registerPassword,
@@ -39,20 +55,20 @@ angular
             password: scope.password
           })
           .then(function (response) {
-            $location.path('dashboard');
+            if(response.data.ok){
+              $location.path('dashboard');
+            }
           })
           .catch(function (err) {
             scope.error = '';
+            console.log(err);
             switch (err.status) {
-              case 401:
-                scope.error = 'Invalid login information';
+              case 400:
+                scope.error = err.data.message;
                 break;
-              case 408:
-                scope.error = 'Request timed out! (Error 408)';
-                break;
-              case 415:
-                scope.error = 'The server is temporarily unavailable. (Error 415)';
-                break;
+              case -1:
+                scope.error = 'Could not connect to the server';
+                    break;
               default:
                 scope.error = 'Something went wrong, contact administrator. ';
                 break;

@@ -40,10 +40,8 @@ angular
   }).run(function (
     $location,
     $rootScope,
-    $auth,
-    $http
+    $auth
   ) {
-
     $rootScope.$on('$routeChangeSuccess', function (angularEvent, current) {
         if (current.loggedIn && !$auth.isAuthenticated()) {
           $location.path('/');
