@@ -3,7 +3,7 @@
 angular
   .module('lolanalyticsApp')
   .directive('addSummoner', function (
-    SummonerHttp
+    SummonerService
   ) {
     return {
       restrict: 'A',
@@ -11,18 +11,9 @@ angular
       scope: {},
       link: function (scope) {
         scope.add = function () {
-          SummonerHttp
-            .addSummoner(scope.name)
-            .then(function (res) {
-              console.log(res);
-                scope.message = 'Summoner added successfully!';
-            }, function (err) {
-              switch(err.statusCode) {
-                default:
-                  scope.message = err.data.message;
-                  break;
-              }
-            });
+          SummonerService.addSummoner(scope.name, function (message) {
+            scope.message = message;
+          });
         };
       }
     }

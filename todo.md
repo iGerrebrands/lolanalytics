@@ -1,6 +1,5 @@
 # Todo
 
-
 - Create an refresh option for summoner to sync data with riot api
 - remove spaces summoner name in backend before doing request to the riot api
 - Let users choose between REGIO: (front end)
