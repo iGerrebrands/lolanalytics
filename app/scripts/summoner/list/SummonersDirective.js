@@ -7,7 +7,7 @@ angular
   ) {
       return {
         restrict: 'A',
-        templateUrl: './scripts/summoner/SummonersView.html',
+        templateUrl: './scripts/summoner/list/SummonersView.html',
         scope: {ids: '='},
         link: function (scope) {
           scope.summonerIds = [];

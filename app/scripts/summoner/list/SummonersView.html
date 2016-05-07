@@ -1,7 +1,7 @@
 
 <div class="row">
   <h1 ng-show="!connection">Connection lost!</h1>
-  <div class="col s12 m3" ng-repeat="summoner in summoners track by $index">
+  <div class="col s12 m3" ng-repeat="summoner in summoners">
     <div summoner data="summoner" ng-show="summoners.length > 0"></div>
   </div>
 

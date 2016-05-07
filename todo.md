@@ -1,6 +1,6 @@
 # Todo
 
-- Make delete function for summoners (frontend)
+- Make the add summoner into an modal
 - Create an refresh option for summoner to sync data with riot api
 - remove spaces summoner name in backend before doing request to the riot api
 - Let users choose between REGION when they add a summoner: (front end)

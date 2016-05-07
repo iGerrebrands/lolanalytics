@@ -40,8 +40,12 @@ angular
         });
     };
 
-    this.deleteSummoner = function () {
-      //HTTP delete and update summoners var when success
+    this.deleteSummoner = function (id, region) {
+      SummonerHttp
+        .deleteSummoner(id, region)
+        .then(function (res) {
+          self.updateSummoners(function (ok) {});
+        }, function (err) {console.log(err);});
     };
 
     this.syncSummoner = function (id, region) {

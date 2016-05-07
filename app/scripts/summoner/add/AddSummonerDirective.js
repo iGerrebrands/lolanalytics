@@ -7,7 +7,7 @@ angular
   ) {
     return {
       restrict: 'A',
-      templateUrl: './scripts/summoner/AddSummonerView.html',
+      templateUrl: './scripts/summoner/add/AddSummonerView.html',
       scope: {},
       link: function (scope) {
         scope.add = function () {

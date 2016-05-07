@@ -27,4 +27,13 @@ angular
         data: {name: name}
       });
     };
+
+    this.deleteSummoner = function (id, region) {
+      return $http({
+        url: CONFIG.API_URL + '/user/summoner/',
+        method: 'DELETE',
+        headers: {"Content-Type": "application/json;charset=utf-8"},
+        data: {id: id, region: region}
+      });
+    };
   });

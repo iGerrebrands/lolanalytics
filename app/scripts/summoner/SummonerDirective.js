@@ -3,6 +3,7 @@
 angular
   .module('lolanalyticsApp')
   .directive('summoner', function (
+    SummonerService
   ) {
     return {
       restrict: 'A',
@@ -16,6 +17,11 @@ angular
           if(newVal !== null && typeof newVal !== 'undefined')
             scope.icon = 'http://ddragon.leagueoflegends.com/cdn/6.8.1/img/profileicon/' + newVal.profileIconId + '.png'
         });
+
+        scope.delete = function () {
+          SummonerService
+            .deleteSummoner(scope.summoner.id, scope.summoner.region);
+        };
       }
     };
   });
